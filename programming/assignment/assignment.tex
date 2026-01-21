@@ -1,0 +1,115 @@
+\documentclass [11pt]{article}
+\usepackage{ua}
+
+\begin{document}
+
+\headerHW{1b}{Intro, Boolean Retrieval}{February 8, 2026}
+
+\begin{instructions}
+\begin{itemize}
+\item Push your code on GitHub and modify the README file with your name so we can map your GitHub user name to your official name in d2l.
+
+\item Steps to get started:
+
+\begin{small}
+  \begin{verbatim}
+   # Accept the invite link for the assignment.
+   #   Doing so will create a repo named ASSIGNMENT_NAME-YOUR-GITHUB_USER
+   #
+   # First, include a README file with your name so we can map your GitHub user name
+   #   to your official name in d2l
+   #
+   # Then, set up the environment and get started:
+   > git clone YOUR_REPO
+   > cd YOUR_REPO
+   > python3 -m venv .env
+   > source .env/bin/activate
+   > pip install -r requirements.txt   
+  \end{verbatim}
+\end{small}
+
+\item You can play with the search engine using the following command: \texttt{python3 boolean\_engine.py wiki-small.txt}. For example:
+
+\begin{small}
+  \begin{verbatim}
+  > python3 boolean_engine.py wiki-small.txt
+  Query: algorithm
+  [1552, 1948, 3035, 5033, 5243]
+  Query: NOT the
+  [1, 2, 5, 7, 12, 14, 16, 18, 19, 24, (and many more)]
+  Query: AND algorithm the
+  [1552, 1948, 3035, 5033, 5243]
+  \end{verbatim}
+\end{small}
+  
+Note that the syntax is ``operator first-term second-term'', and that operators must be in upper case (e.g., ``and'' is considered an term, not an operator.
+
+\item Grading will be primarily via test cases.
+You have access to a few public test cases.
+You can run the public test cases locally on your computer with the following command:
+\texttt{> pytest}.
+For details about which test cases pass and fail, use \texttt{> pytest --verbose}.
+
+\textbf{In addition to running the public test cases, we will check your implementation with a set of hidden test cases that are not visible to you, to ensure that your implementation is generalizable}.
+You will not receive credit if you hard code the expected output or use external libraries that are not in \texttt{requirements.txt}.
+Additionally, you must implement what you are asked using the methods you are asked (or as discussed in class).
+For example, you will not get credit if you do not use an inverted index.
+
+The public test cases will also run after you push your code to GitHub and create a pull request (see repository for details).
+You are responsible for ensuring that the public test cases run on GitHub.
+The instructor will test your code with the hidden test cases after the submission deadline has passed.
+See details including screenshots in the repository.
+
+\item HW\#1b is worth 30 points of your final grade but graded out of 100 points (undergraduate students) or 150 points (graduate students).
+  \begin{itemize}
+  \item Undergraduate students do not need to submit the questions marked as ``graduate students,'' but must submit all other questions (or be ok loosing points).
+If they submit answers to questions marked as ``graduate students,'' their grade will be capped at 100  points. See HW\#1a for an example. 
+
+  \item Graduate students must do questions marked as ``graduate students'' or be ok loosing points for their final grade. See HW\#1a for an example.
+  \end{itemize}
+\end{itemize}
+
+\end{instructions}
+\newpage
+
+\begin{question}{5}
+Browse the code provided to you.
+Specifically:
+  \begin{itemize}
+  \item The \texttt{\_\_init\_\_(self, f)} method in \texttt{class IRSystem} creates the inverted index
+  \item Two operators are already implemented for you:
+    \texttt{q\_term} and \texttt{q\_not}
+  \item \texttt{test\_boolean\_queries.py} contains the test cases.
+  \end{itemize}
+\end{question}
+
+\begin{question}{45}
+Implement the \texttt{q\_and} method.
+Your implementation is most likely correct when you pass the public test case (but for full points you also need to pass the hidden test cases).
+\end{question}
+
+\begin{question}{50}
+Implement the \texttt{q\_or} method.
+Your implementation is most likely correct when you pass the public test case (but for full points you also need to pass the hidden test cases).
+\end{question}
+
+\begin{question}{50}
+\textbf{This question is for graduate students.}
+
+Modify the \texttt{run\_query(self, query):} method to handle arbitrary boolean queries.
+This is substantially harder than the other two questions.
+Here is an example from the public test case, but your implementation should handle any boolean query, no matter how long.
+
+  \begin{verbatim}
+  AND president OR house white
+  Result: [1325, 2391, 3041, 3618, 3771, 4053, 5409]
+  \end{verbatim}
+  
+  Your implementation is most likely correct when you pass the public test case (but for full points you also need to pass the hidden test cases).
+  Note that the syntax may look weird at first.
+  However, it will substantially ease the (potential) pain involved in implementing a parser with parenthesis.
+  You only need a stack!
+
+\end{question}
+
+\end{document}

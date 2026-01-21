@@ -1,0 +1,137 @@
+\ProvidesPackage{ua}
+
+\usepackage{setspace,amssymb,latexsym,amsmath,amscd,epsfig,amsthm,wasysym}
+\usepackage{mdwlist}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{booktabs}
+
+\font\minihelv=phvr at 6pt
+\font\helv=phvr at 10pt
+\font\bighelv=phvr at 20pt
+\font\hugehelv=phvr at 36pt
+\font\mybigfont=phvr at 16pt
+\font\mymediumfont=phvr at 14pt
+\font\mediumhelv=phvr at 14pt
+\font\mybfit=ptmbi at 12pt
+
+\def\minivskip{\vskip 1.5mm}
+\def\myspace{\phantom{\Biggr\|}}
+\def\leavespace{\vskip 4mm}
+
+%\parindent=0pt
+\setlength{\evensidemargin}{0.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\topmargin}{-1.5cm}
+%\setlength{\baselineskip}{20pt}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{23.5cm}
+\hoffset = -0.25cm
+
+\newcommand{\uni}{University of Arizona}
+\newcommand{\classnum}{CSC 4/583}
+\newcommand{\classname}{Text Retrieval and Web Search}
+\newcommand{\semester}{Spring 2026}
+
+
+% #1: homework number
+% #2: homework topic
+% #3: due date
+\newcommand{\headerHW}[3]{
+  \begin{center}
+  \begin{tabular}{p{0.5\textwidth} l p{0.28\textwidth}}
+    \toprule
+    \uni                       & Homework\##1 & #2 \\
+    \classnum{} \classname{}   & Due date:    & #3 \\
+    \semester{}                & \bf Name:    &    \\
+    Instructor: Mihai Surdeanu &              &    \\ 
+    TAs: Haris Riaz and Enfa Fane & & \\ \bottomrule
+  \end{tabular}
+  \end{center}
+}
+
+
+% #1: quiz number
+% #2: quiz topic
+% #3: date
+\newcommand{\headerQ}[3]{
+  \begin{center}
+  \begin{tabular}{p{0.5\textwidth} l p{0.35\textwidth}}
+    \toprule
+    \uni                       & Quiz\##1  & #2 \\
+    \classnum{} \classname{}   & Date:     & #3 \\
+    \semester{}                & \bf Name: &    \\
+    Instructor: Eduardo Blanco &           &    \\ \bottomrule
+  \end{tabular}
+  \end{center}
+}
+
+
+\newcommand{\headerExam}[2]{
+  \begin{center}
+  \begin{tabular}{p{0.5\textwidth} l l}
+    \toprule
+    \uni                       & \multicolumn{2}{l}{#1}  \\
+    \classnum{} \classname{}   & Date: & #2 \\
+    \semester                  & \bf Name: &    \\
+    Instructor: Eduardo Blanco &           &    \\ \bottomrule
+  \end{tabular}
+  \end{center}
+}
+
+% #1 Final / Midterm Exam
+% #2 Date
+% #3 Number of pages
+% #4 Duration of exam
+% #5 Additional notes
+\newcommand{\coverExam}[5]{
+  \headerExam{#1}{#2}  
+
+  \vspace{1in}
+  \noindent
+  Instructions:
+  \begin{enumerate}
+  \item Write your name at the top of this page now.
+  \item Make sure your exam has #3 pages (including the cover page). Pages are numbered.
+  \item Do not remove the staple on this exam.
+  \item You should only have this exam and a pen or pencil within reach.
+    Store away anything else.
+  \item You cannot share anything with any of your classmates.
+  \item Read carefully each question and provide the solution in the space provided.
+    If you run out of space, use the back of the sheet.
+    There is scratch paper at the end of the exam for your convenience.
+  \item Show your work and justify your answers unless otherwise stated.
+    Correct answers with no support will not receive full credit.
+  \item If you have a question, raise your hand and the instructor will come to you.
+  \item You have #4 to complete this exam.
+  \item \textbf{You will get a zero in this exam if at any point of time you have a piece of paper within reach that was not given to you by the instructor today.}
+  \item \textbf{You will get a zero in this exam if at any point of time you use an electronic device.
+    If it has a power button or a battery, you cannot use it.}
+  \end{enumerate}
+  \vspace{1in}
+  \noindent #5
+
+  \clearpage
+}
+
+
+\newcommand{\scratchpaper}{
+  \clearpage
+  \begin{center}
+    \textbf{Scratch paper}
+  \end{center}
+}
+
+
+\newenvironment{instructions}
+               {\vspace{.25in} {\bf \noindent Instructions} \\}
+               {}
+
+\newcounter{questionCounter}
+% #1: points
+\newenvironment{question}[1]{
+  \stepcounter{questionCounter}
+  \vspace{.25in}
+  {\bf \noindent Question \arabic{questionCounter}} [#1pt] \\}
+  {}
