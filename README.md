@@ -28,15 +28,14 @@ just created. Your command must be similar to :
 
 # Write your code
 
-You will implement one function each for each of the programming sub questions Eg: `def q1_1(self,query):` inside 
-the class `QueryEngine` (csc583/query_engine.py). These functions should return the documents in the right order, as asked in the question. 
+You will implement one function each for each of the programming sub questions Eg: `q_and(docs1, docs2):` inside 
+the class `IRSystem` (programming/boolean_engine.py). These functions should return the documents in the right order, as asked in the question. 
 
 Also, you **should not edit** these files:
 - `.github/workflows/run-tests-on-pull.yml`
 - `programming/test_boolean_queries.py`
 - `programming/query.py`
 - `programming/wiki-small.txt`
-- `programming/prepare_python_code.py`
 
 **Note: The file `wiki-small.txt` is the input file you must use to build the index as per hw1 guidelines. Please don't edit it or move it.**
 
