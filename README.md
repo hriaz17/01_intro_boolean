@@ -77,10 +77,10 @@ it’s highly likely that it will pass in github. Nevertheless
 you should make sure that you see a green tick mark or a message 
 saying “All Checks Have Passed”. 
 
-![like this:](tests_pass.png)
+![like this:](programming/tests_pass.png)
 
 If your test cases are failing, you will get an error message like this.
-![like this:](tests_fail.png)
+![like this:](programming/tests_fail.png)
 Click on the link which says `details` and find out what is causing the issue or which test case is not passing. Once you have identified that, close the pull request, fix the errors, and raise another pull request.
 **Do not merge the pull request.**
 
@@ -91,7 +91,7 @@ You must also submit the answers to the other written questions on Gradescope.
 
 # Grading
 
-Programming question of this assignment will be graded primarily on their ability to pass the public tests that have been provided to you on github after the pull request **and the hidden test cases not visible to you**.
+Programming question of this assignment will be graded primarily on their ability to pass the public tests that have been provided to you which will run on github after the pull request **and the hidden test cases not visible to you**.
 
 Assignments that pass all, and with the corresponding code implementing the correct logic, will receive at least 95% of the
 possible points.
