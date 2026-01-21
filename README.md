@@ -45,16 +45,16 @@ Also, you **should not edit** these files:
 Some public tests have been provided for you in the `test_boolean_queries.py` file.
 To run all the public tests, just type/run  ``pytest`` from command line from the directory containing `programming/` or any of its subdirectories
 
-If your code passes the test case, you will see output like:
+If your code passes the public test cases, you will see output like:
 ```
 ============================= test session starts ==============================
-platform darwin -- Python 3.8.3, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
-rootdir: /Users/mordor/tawork/hw1/hw1_python
-collected 3 items                                                              
+platform darwin -- Python 3.9.16, pytest-7.4.2, pluggy-1.3.0
+rootdir: /Users/hriaz/Downloads/CSC583_SP26/01_intro_boolean/programming
+collected 6 items
 
-src/test/python/edu/arizona/cs/test_q5.py ...                            [100%]
+test_boolean_queries.py ......                                           [100%]
 
-============================== 3 passed in 0.10s ===============================
+============================== 6 passed in 0.21s ===============================
 ```
 
 # Submitting your code
